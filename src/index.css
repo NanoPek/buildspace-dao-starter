@@ -4,8 +4,8 @@ body {
   font-family: Inter, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #7700ee;
-  color: #fff;
+  background-color: #210612;
+  color: #f7bbcf;
   overflow-x: hidden;
 }
 #root {
@@ -13,8 +13,16 @@ body {
   display: flex;
 }
 
+
+
 h1 {
   font-size: 5rem;
+  margin: 0
+}
+h2 {
+  font-size: 2rem;
+  color: #bbf7c5;
+  margin: 1rem 0 3rem 0
 }
 @media screen and (max-width: 768px) {
   h1 {
@@ -56,7 +64,50 @@ h1 {
   display: flex;
   text-align: center;
 }
+.vote-input {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: #663399;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid #663399;
+  border-radius: 50%;
+  transform: translateY(-0.0075em);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
 
+.vote-input::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em ;
+}
+
+.vote-input:checked::before {
+  transform: scale(1);
+}
+
+.vote-input:focus {
+  outline: max(2px, 0.15em) solid #663399;
+  outline-offset: max(2px, 0.15em);
+}
+
+.center {
+  text-align: center;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 .member-page > div {
   display: flex;
   flex-direction: row;
@@ -93,7 +144,7 @@ h1 {
 
 .member-page form h5 {
   margin-top: 0;
-  color: #7700ee;
+  color: #210612;
 }
 
 .member-page form .card > div {
@@ -107,17 +158,17 @@ h1 {
 }
 
 .card {
-  background-color: #fff;
+  background-color: #f7bbcf;
+  color: #210612;
   padding: 1rem;
   border-radius: 1rem;
-  color: #000;
   box-shadow: 3.1px 6.2px 6.2px hsl(0deg 0% 0% / 0.4);
 }
 
 button {
   cursor: pointer;
-  background-color: #000;
-  color: #fff;
+  background-color: #f7bbcf;
+  color: #210612;
   border: none;
   font-weight: bold;
   font-family: inherit;
@@ -128,11 +179,11 @@ button {
 }
 
 button:hover {
-  background-color: #121212;
+  background-color: #f9cddb;
 }
 
 button:focus {
-  background-color: #222;
+  background-color: #fbdee8;
 }
 
 button:disabled {
