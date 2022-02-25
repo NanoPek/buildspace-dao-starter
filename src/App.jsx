@@ -361,16 +361,17 @@ const App = () => {
               <div className="landing">
                   <h1>Welcome to Kirby's DAO</h1>
                   <h2>Mint Your Own FREE Yoshi Mount Membership NFT</h2>
-                  <button
-                      disabled={isClaiming}
-                      onClick={() => mintNft()}
-                  >
-                      {isClaiming ? "Minting..." : "Mint your NFT (FREE)"}
-                  </button>
-                  {!address && (
+                  {!address ? (
                       <button onClick={() => connectWallet("injected")} className="btn-hero">
                         Connect your wallet
                     </button>
+                  ) : (
+                      <button
+                          disabled={isClaiming}
+                          onClick={() => mintNft()}
+                      >
+                          {isClaiming ? "Minting..." : "Mint your NFT (FREE)"}
+                      </button>
                   )}
               </div>
   );
